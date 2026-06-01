@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with role definition",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "Role of the user, can be 'user' or 'admin'."
+        }
+      },
+      "required": ["role"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/User"
+      },
+      "description": "Stores user roles"
+    }
+  }
+}
